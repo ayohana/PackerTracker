@@ -5,10 +5,15 @@
 }
 
 <h1>Welcome to Packer Tracker</h1>
-<h2>Item Name: @Model<h2>
 
-
+@if (Model.Count == 0)
+{
+  <h4>There are no items in your list of things to pack.</h4>
+}
+else
+{
   <ul>
+  <li>Number of items in your list: @Model.Count</li>
   @foreach (ThingsToBring thing in Model)
   {
     <li>Item name: @thing.Name
@@ -22,6 +27,9 @@
     </li>
   }
   </ul>
+}
 
 <a href="/thingstobring/new">Create new thing to pack</a>
-<a href="/thingstobring/deleteall"> Delete all Items from your list</a>
+<form action="/thingstobring/deleteall" method="post">
+  <button type="submit" name="button">Clear All Items</button>
+</form>

@@ -9,7 +9,7 @@
 * To Do List Project
 * Packer Tracker Project
 * Red, Green, Refactor workflow
-* Struggles: checkboxes
+* Struggles: checkboxes, dealing with errors, scope in Controller
 
 ## Specs
 
