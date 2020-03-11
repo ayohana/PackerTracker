@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 
-namespace ProjectName.Models
+namespace PackerTracker.Models
 {
-  public class ClassName
+  public class ThingsToBring
   {
     // Back-end code goes here
   }

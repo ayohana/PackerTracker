@@ -1,10 +1,10 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProjectName.Models;
+using PackerTracker.Models;
 
-namespace ProjectName.Tests
+namespace PackerTracker.Tests
 {
   [TestClass]
-  public class ClassNameTests
+  public class ThingsToBringTests
   {
     [TestMethod]
     public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()

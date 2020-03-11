@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
-using ProjectName.Models;
+using PackerTracker.Models;
 using System.Collections.Generic;
 
-namespace ProjectName.Controllers
+namespace PackerTracker.Controllers
 {
-  public class ClassesNameController : Controller
+  public class ThingsToBringController : Controller
   {
 
     // HttpGet and HttpPost routes go here
