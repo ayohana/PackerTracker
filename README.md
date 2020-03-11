@@ -9,7 +9,7 @@
 * To Do List Project
 * Packer Tracker Project
 * Red, Green, Refactor workflow
-* Struggles: 
+* Struggles: checkboxes
 
 ## Specs
 

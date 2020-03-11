@@ -7,11 +7,12 @@ namespace PackerTracker.Controllers
   public class ThingsToBringController : Controller
   {
 
+    public List<ThingsToBring> allThings = ThingsToBring.GetAll();
+
     // Displays list of all things
     [HttpGet("/thingstobring")]
     public ActionResult Index()
     {
-      List<ThingsToBring> allThings = ThingsToBring.GetAll();
       return View(allThings);
     }
 
@@ -24,9 +25,9 @@ namespace PackerTracker.Controllers
 
     // Creates a new thing
     [HttpPost("/thingstobring")]
-    public ActionResult Create(string name, int price, bool isPurchased, int weight, string manufacturer, bool isPacked)
+    public ActionResult Create(string name, int price, string isPurchased, int weight, string manufacturer, string isPacked)
     {
-      ThingsToBring newthing = new ThingsToBring(name, price, isPurchased, weight, manufacturer, isPacked);
+      ThingsToBring newThing = new ThingsToBring(name, price, isPurchased, weight, manufacturer, isPacked);
       return RedirectToAction("Index");
     }
 

@@ -7,16 +7,17 @@ namespace PackerTracker.Models
   {
     public string Name { get; set; }
     public int Price { get; set; }
-    public bool IsPurchased { get; set; }
+    public string IsPurchasedInput { get; set; }
+    public bool IsPurchased {get; set;}
     public int Weight { get; set; }
     public string Manufacturer { get; set; }
+    public string IsPackedInput {get; set;}
     public bool IsPacked {get; set;}
 
-    public static List<ThingsToBring> ListOfThingsToBring { get; set; }
+    private static List<ThingsToBring> ListOfThingsToBring = new List<ThingsToBring> { };
 
     public ThingsToBring()
     {
-      ListOfThingsToBring = new List<ThingsToBring> { };
       ListOfThingsToBring.Add(this);
     }
     
@@ -26,15 +27,38 @@ namespace PackerTracker.Models
       ListOfThingsToBring.Add(this);
     }
 
-    public ThingsToBring(string name, int price, bool isPurchased, int weight, string manufacturer, bool isPacked)
+    public ThingsToBring(string name, int price, string isPurchased, int weight, string manufacturer, string isPacked)
     {
       Name = name;
       Price = price;
-      IsPurchased = isPurchased;
+      IsPurchasedInput = isPurchased;
+
       Weight = weight;
       Manufacturer = manufacturer;
-      IsPacked = isPacked;
+
+      IsPackedInput = isPacked;
+      ChecksBools();
       ListOfThingsToBring.Add(this);
+    }
+
+    public void ChecksBools()
+    {
+      if(IsPurchasedInput == "true")
+      {
+        IsPurchased = true;
+      }
+      else if (IsPurchasedInput == "false")
+      {
+        IsPurchased = false;
+      }
+      if (IsPackedInput == "true")
+      {
+        IsPacked = true;
+      }
+      else if (IsPurchasedInput == "false")
+      {
+        IsPurchased = false;
+      }
     }
 
     public static List<ThingsToBring> GetAll()

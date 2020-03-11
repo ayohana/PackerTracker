@@ -1,1 +1,30 @@
-@* Razor code goes here *@
+@{
+  ViewBag.Title = "Create a new item to bring";
+  Layout = "_Layout";
+}
+
+<h1>Create a new item:</h1>
+<form action = "/thingstobring" method="post">
+  <label for="name"> Add a new item name to pack</label>
+  <input id="name" name="name" type="text">
+  <br>
+  <label for="price"> How much does your item cost?</label>
+  <input id="price" name="price" type="number">
+  <br>
+  <label for="isPurchased"> Have you purchased this item yet</label>
+  <input id="isPurchased" name="isPurchased" value="true" type="text">
+  <br>
+  <label for="weight"> How much does your item weigh?</label>
+  <input id="weight" name="weight" type="number">
+  <br>
+  <label for="manufacturer"> Who made your item?</label>
+  <input id="manufacturer" name="manufacturer" type="text">
+  <br>
+  <label for="isPacked"> Have you packed this item?</label>
+  <input id="isPacked" name="isPacked" value="true" type="text">
+  <br>
+  <button type="submit">Add this item</button>
+</form>
+
+<a href="/thingstobring">See your list of things</a>
+<a href="/thingstobring/deleteall"> Delete all Items from your list</a>
