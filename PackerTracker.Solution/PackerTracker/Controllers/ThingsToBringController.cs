@@ -24,14 +24,14 @@ namespace PackerTracker.Controllers
 
     // Creates a new thing
     [HttpPost("/thingstobring")]
-    public ActionResult Create()
+    public ActionResult Create(string name, int price, bool isPurchased, int weight, string manufacturer, bool isPacked)
     {
       ThingsToBring newthing = new ThingsToBring(name, price, isPurchased, weight, manufacturer, isPacked);
       return RedirectToAction("Index");
     }
 
     // Clears all things
-    [HttpPost("/thingstobring/delete")]
+    [HttpPost("/thingstobring/deleteall")]
     public ActionResult DestroyAll()
     {
       ThingsToBring.ClearAll();
