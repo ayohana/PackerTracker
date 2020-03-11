@@ -38,5 +38,12 @@ namespace PackerTracker.Controllers
       ThingsToBring.ClearAll();
       return View();
     }
+
+    [HttpGet("/thingstobring/{id}")]
+    public ActionResult Show(int id)
+    {
+      ThingsToBring foundThing = ThingsToBring.Find(id);
+      return View(foundThing);
+    }
   }
 }

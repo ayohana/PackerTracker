@@ -6,6 +6,7 @@ namespace PackerTracker.Models
   public class ThingsToBring
   {
     public string Name { get; set; }
+    public int Id { get; }
     public int Price { get; set; }
     public string IsPurchasedInput { get; set; }
     public bool IsPurchased {get; set;}
@@ -14,17 +15,19 @@ namespace PackerTracker.Models
     public string IsPackedInput {get; set;}
     public bool IsPacked {get; set;}
 
-    private static List<ThingsToBring> ListOfThingsToBring = new List<ThingsToBring> { };
+    private static List<ThingsToBring> _listOfThingsToBring = new List<ThingsToBring> { };
 
     public ThingsToBring()
     {
-      ListOfThingsToBring.Add(this);
+      _listOfThingsToBring.Add(this);
+      Id = _listOfThingsToBring.Count;
     }
     
     public ThingsToBring(string name)
     {
       Name = name;
-      ListOfThingsToBring.Add(this);
+      _listOfThingsToBring.Add(this);
+      Id = _listOfThingsToBring.Count;
     }
 
     public ThingsToBring(string name, int price, string isPurchased, int weight, string manufacturer, string isPacked)
@@ -38,7 +41,8 @@ namespace PackerTracker.Models
 
       IsPackedInput = isPacked;
       ChecksBools();
-      ListOfThingsToBring.Add(this);
+      _listOfThingsToBring.Add(this);
+      Id = _listOfThingsToBring.Count;
     }
 
     public void ChecksBools()
@@ -63,12 +67,17 @@ namespace PackerTracker.Models
 
     public static List<ThingsToBring> GetAll()
     {
-      return ListOfThingsToBring;
+      return _listOfThingsToBring;
     }
 
     public static void ClearAll()
     {
-      ListOfThingsToBring.Clear();
+      _listOfThingsToBring.Clear();
+    }
+
+    public static ThingsToBring Find(int searchId)
+    {
+      return _listOfThingsToBring[searchId-1];
     }
 
   }

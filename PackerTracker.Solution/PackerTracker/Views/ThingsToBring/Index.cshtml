@@ -16,15 +16,7 @@ else
   <li>Number of items in your list: @Model.Count</li>
   @foreach (ThingsToBring thing in Model)
   {
-    <li>Item name: @thing.Name
-      <ul>
-        <li>Price: @thing.Price</li>
-        <li>Purchased? @thing.IsPurchased</li>
-        <li>Weight: @thing.Weight</li>
-        <li>Manufacturer: @thing.Manufacturer</li>
-        <li>Did you pack it: @thing.IsPacked</li>
-      </ul>
-    </li>
+    <li><a href="/thingstobring/@thing.Id">@thing.Name</a></li>
   }
   </ul>
 }
