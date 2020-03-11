@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PackerTracker.Models;
+using System.Collections.Generic;
 
 namespace PackerTracker.Tests
 {
@@ -47,8 +48,8 @@ namespace PackerTracker.Tests
     {
       List<ThingsToBring> expected = new List<ThingsToBring> { };
       ThingsToBring newThing = new ThingsToBring();
-      newThing.ListOfThingsToBring = new List<ThingsToBring> { };
-      List<ThingsToBring> result = ThingsToBring.Getall();
+      ThingsToBring.ListOfThingsToBring = new List<ThingsToBring> { };
+      List<ThingsToBring> result = ThingsToBring.GetAll();
       CollectionAssert.AreEqual(expected, result);
     }
 
@@ -59,13 +60,31 @@ namespace PackerTracker.Tests
       string description2 = "Snowboard";
       string description3 = "Hot Chocolate";
 
-      List<ThingsToBring> expected = new List<ThingsToBring> {newThing1, newThing2, newThing3};
       ThingsToBring newThing1 = new ThingsToBring(description1);
       ThingsToBring newThing2 = new ThingsToBring(description2);
       ThingsToBring newThing3 = new ThingsToBring(description3); 
 
+      List<ThingsToBring> expected = new List<ThingsToBring> {newThing1, newThing2, newThing3};
+
       // Constructor will automatically add each thing instance to our list
-      List<ThingsToBring> result = ThingsToBring.Getall();
+      List<ThingsToBring> result = ThingsToBring.GetAll();
+      CollectionAssert.AreEqual(expected, result);
+    }
+
+    [TestMethod]
+    public void ClearAll_ClearsListOfThingsToBring_ClearsListOfThingsToBring()
+    {
+      string description1 = "Ski jacket";
+      string description2 = "Snowboard";
+      string description3 = "Hot Chocolate";
+
+      ThingsToBring newThing1 = new ThingsToBring(description1);
+      ThingsToBring newThing2 = new ThingsToBring(description2);
+      ThingsToBring newThing3 = new ThingsToBring(description3); 
+
+      ThingsToBring.ClearAll();
+      List<ThingsToBring> expected = new List<ThingsToBring> { };
+      List<ThingsToBring> result = ThingsToBring.GetAll();
       CollectionAssert.AreEqual(expected, result);
     }
   }
