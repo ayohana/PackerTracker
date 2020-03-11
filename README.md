@@ -1,4 +1,4 @@
-# Packer Tracker for a Ski Trip
+# Packer Tracker For a Ski Trip
 
 #### C# MVC Pattern Exercise for [Epicodus](https://www.epicodus.com/), 03.11.2020
 

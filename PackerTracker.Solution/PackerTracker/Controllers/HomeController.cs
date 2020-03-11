@@ -5,11 +5,11 @@ namespace PackerTracker.Controllers
   public class HomeController : Controller
   {
 
-    // [HttpGet("/")]
-    // public ActionResult Index()
-    // {
-    //   return View();
-    // }
+    [HttpGet("/thingstobring")]
+    public ActionResult Index()
+    {
+      return View();
+    }
 
   }
 }
