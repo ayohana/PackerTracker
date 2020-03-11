@@ -1,8 +1,8 @@
-# [Project Name](https://github.com/ayohana/ProjectName.git/)
+# Packer Tracker
 
-#### C# & MVC Pattern Exercise for [Epicodus](https://www.epicodus.com/), 03.08.2020
+#### C# MVC Pattern Exercise for [Epicodus](https://www.epicodus.com/), 03.11.2020
 
-#### By [**Adela Darmansyah**](https://ayohana.github.io/portfolio/)
+#### By **Adela Darmansyah and Steven Fleming**
 
 ## Description
 
